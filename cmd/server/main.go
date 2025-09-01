@@ -4,12 +4,19 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+
+	"cryptoprice-monitor/configs"
 )
 
 func main() {
-	fmt.Println("Starting server on :8080")
+	cfg, err := configs.LoadConfig()
+	if err != nil {
+		log.Fatalf("Failed to load config: %v", err)
+	}
 
-	if err := http.ListenAndServe(":8080", nil); err != nil {
+	addr := fmt.Sprintf(":%d", cfg.Server.Port)
+	fmt.Printf("Starting server on port: %d\n", cfg.Server.Port)
+	if err := http.ListenAndServe(addr, nil); err != nil {
 		log.Fatal(err)
 	}
 }
