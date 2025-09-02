@@ -7,7 +7,6 @@ import (
 )
 
 func StartFetcher(config *configs.Config, cache *storage.Cache) *Scheduler {
-	util.Init()
 
 	scheduler := NewScheduler(config.Fetcher.IntervalSeconds)
 	scheduler.Start(func() {

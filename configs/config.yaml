@@ -30,5 +30,5 @@ coins:
   - BNB
 
 logging:
-  level: "info"
-  file: "logs/server.log"
+  enableFile: true
+  file: "./logs/app.log"
