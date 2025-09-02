@@ -2,20 +2,20 @@ server:
   port: 8080
 
 fetcher:
-  interval_seconds: 20
+  interval_seconds: 15
   exchanges:
     - name: binance
       api_url: "https://api.binance.com/api/v3/ticker/price?symbol=%s"
     - name: coinbase
       api_url: "https://api.coinbase.com/v2/prices/%s-USD/spot"
     - name: kraken
-      api_url: "https://api.kraken.com/0/public/Ticker?pair=%sUSD"
-    - name: bitfinex
-      api_url: "https://api.bitfinex.com/v1/pubticker/%s"
-    - name: huobi
-      api_url: "https://api.huobi.pro/market/detail/merged?symbol=%s"
-    - name: okex
-      api_url: "https://www.okex.com/api/v5/market/ticker?instId=%s-USD"
+      api_url: "https://api.kraken.com/0/public/Ticker?pair=%s"
+#    - name: bitfinex
+#      api_url: "https://api.bitfinex.com/v1/pubticker/%s"
+#    - name: huobi
+#      api_url: "https://api.huobi.pro/market/detail/merged?symbol=%s"
+#    - name: okex
+#      api_url: "https://www.okex.com/api/v5/market/ticker?instId=%s-USD"
 
 coins:
   - BTC
